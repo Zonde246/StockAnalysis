@@ -1,0 +1,58 @@
+body {
+    background-color: #222;
+    color: #ddd;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100svh;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 50%;
+    gap: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+}
+
+label {
+    flex: 1;
+    margin-left: auto;
+    margin-right: 10px;
+
+}
+
+input {
+    width: 75%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    background-color: #333;
+    color: #eee;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 3px;
+    background-color: #333;
+    color: #eee;
+    cursor: pointer;
+}
