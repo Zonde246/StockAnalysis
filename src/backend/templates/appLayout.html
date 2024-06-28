@@ -1,0 +1,39 @@
+{% macro head() %}
+    <head>
+
+        <script src="/static/script/auth.js" defer></script>
+        <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="/styles/global.css" ) }}>
+        <title>Title</title>
+    </head>
+
+{% endmacro %}
+
+{% macro navBar() %}
+    <header>
+        <nav class="">
+            <span><a href="/">Home</a></span>
+            <span><a href="/chart">Charts</a></span>
+            <span><a href="/vote">Voting</a></span>
+            <span class="leftMargin"><a href="/change">Changelogs and Blogs</a></span>
+            <span class="rightMargin" id="login"><a href="/signin">Login</a></span>
+            <span class="hidden rightMargin" id="logout"><a href="/signout" id="outData">Logout</a></span>
+        </nav>
+    </header>
+{% endmacro %}
+
+{% macro footer() %}
+    <footer>
+        This is still a work in progress
+    </footer>
+{% endmacro %}
+
+{% macro appLayout() %}
+    {{ head() }}
+    <section class="layout">
+        {{ navBar() }}
+        <main>
+            {{ caller() }}
+        </main>
+        {{ footer() }}
+    </section>
+{% endmacro %}
