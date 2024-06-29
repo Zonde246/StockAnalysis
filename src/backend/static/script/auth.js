@@ -12,7 +12,8 @@ const email = getEmail().then((email) => {
     if (email) {
         document.getElementById("login").style.display = "none";
         document.getElementById("logout").style.display = "block";
-        document.getElementById("outData").textContent = email.split("@")[0];
+        // Make start letter caps
+        document.getElementById("outData").textContent = email.split("@")[0].charAt(0).toUpperCase() + email.split("@")[0].slice(1);
     }
 
 });

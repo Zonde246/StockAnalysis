@@ -1,0 +1,9 @@
+{% macro head() %}
+    <head>
+
+        <script src="/static/script/auth.js" defer></script>
+        <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="/styles/global.css" ) }}>
+        <title>Title</title>
+    </head>
+
+{% endmacro %}

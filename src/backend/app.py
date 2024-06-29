@@ -56,7 +56,7 @@ def vote():
     if is_auth is None:
         return redirect('/signin')
 
-    res = supabase.table("voting").select("*").execute()
+    res = supabase.table("voting").select("*").eq("graphExists", False).execute()
     data = []
 
     for i in res.data:

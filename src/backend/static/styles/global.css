@@ -1,14 +1,17 @@
 html,
 body {
     background-color: black;
-    height: 100vh;
+    height: 100svh;
     width: 100%;
     color: aliceblue;
     overflow: hidden;
 }
 
 nav {
+    /*Blue dark, looks better*/
     background-color: #111827;
+    /*Dark grey-black*/
+    /*background-color: #18181b;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +28,10 @@ nav {
 .layout {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    /*gap: 4rem;*/
+
     height: 100%;
+    /*gap: 4rem;*/
+    /*height: 100%;*/
     width: 100%;
 }
 
@@ -97,4 +102,60 @@ label {
     transition: all;
     transition-duration: 2s;
     background-color: rgba(32, 178, 170, 0.7);
+}
+
+footer {
+    font-size: 1rem;
+    padding: 2rem;
+    background-color: #18181b;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem;
+        gap: 0.5rem;
+    }
+
+    span {
+        font-size: 1.2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    input, select {
+        width: 75%;
+        /*padding: 8px;*/
+    }
+
+    ul {
+        padding: 0.25rem;
+        margin: 0.25rem;
+    }
+
+    li {
+        font-size: 1.2rem;
+        padding: 0.25rem;
+        margin: 0.25rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .leftMargin {
+        margin-left: 0;
+    }
+
+    .rightMargin {
+        margin-right: 0;
+    }
 }
