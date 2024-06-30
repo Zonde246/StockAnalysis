@@ -5,23 +5,13 @@
     <title>Voting</title>
     <script src="/static/script/voteHandler.js" defer></script>
     {% import "appLayout.html" as layout %}
-    {% import "flashMacro.html" as f %}
+    {% import "Components/selector.html" as s %}
 </head>
 <body>
 
 
 {% call layout.appLayout() %}
-    <div class="container">
-        <label for="selector">
-            Select a candidate
-        </label>
-        <select id="selector">
-            {% for i in data %}
-                <option value="{{ i[1] }}">{{ i[0] }}</option>
-            {% endfor %}
-        </select>
-        {{ f.flashy() }}
-    </div>
+    {{ s.selector(data) }}
     {% for i in data %}
         <form class="hidden" id="{{ i[1] }}" action="/handleVote" method="post">
             <label class="hidden">
@@ -55,8 +45,6 @@
         cursor: pointer;
     }
 
-    .container {
-        margin: 1rem;
-    }
+
 </style>
 </html>

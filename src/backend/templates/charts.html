@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/script/voteHandler.js" defer></script>
+    <title>Charts</title>
+    {% import "appLayout.html" as layout %}
+    {% import "Components/selector.html" as s %}
+</head>
+<body>
+{% call layout.appLayout() %}
+    {{ s.selector(data) }}
+    {% for i in data %}
+        <div class="hidden" id="{{ i[1] }}">
+            <h2>{{ i[0] }}</h2>
+            <img src="{{ i[3] }}" alt=""> <br/>
+            <form action="/handleStar" method="post">
+                <button id="star" value="{{ i[1] }}" name="ticker">⭐Star</button>
+            </form>
+        </div>
+    {% endfor %}
+{% endcall %}
+</body>
+<style>
+    button {
+        width: 50%;
+        font-size: xx-large;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 3px;
+        background-color: #333;
+        color: #eee;
+        cursor: pointer;
+    }
+
+</style>
+</html>

@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {#    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>#}
 
 
     <title>Landing page</title>
@@ -14,8 +13,8 @@
 {% import "appLayout.html" as layout %}
 
 {% call layout.appLayout() %}
-    <h1>
-        You have not starred any charts yet
+    <h1 id="title">
+        {{ data['title'] }}
     </h1>
 {% endcall %}
 </html>
