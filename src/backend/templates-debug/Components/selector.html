@@ -1,0 +1,20 @@
+{% macro selector(data) %}
+    {% import "miscMacros/flashMacro.html" as f %}
+
+    <div class="container">
+        <label for="selector">
+            Select a candidate
+        </label>
+        <select id="selector">
+            {% for i in data %}
+                <option value="{{ i[1] }}">{{ i[0] }}</option>
+            {% endfor %}
+        </select>
+        {{ f.flashy() }}
+    </div>
+    <style>
+        .container {
+            margin: 1rem;
+        }
+    </style>
+{% endmacro %}

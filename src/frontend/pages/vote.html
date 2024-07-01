@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voting</title>
+    <script src="/static/script/voteHandler.js" defer></script>
+    {% import "appLayout.html" as layout %}
+    {% import "Components/selector.html" as s %}
+</head>
+<body>
+
+
+{% call layout.appLayout() %}
+    {{ s.selector(data) }}
+    {% for i in data %}
+        <form class="hidden" id="{{ i[1] }}" action="/handleVote" method="post">
+            <label class="hidden">
+                <input class="hidden" value="{{ i[1] }}" name="candidate" type="text"/>
+            </label>
+            <ul>
+                <li>
+                    {{ i[0] }}
+                </li>
+                <li>
+                    {{ i[1] }}
+                </li>
+                <li>
+                    {{ i[2] }}
+                </li>
+            </ul>
+            <button>Vote</button>
+        </form>
+    {% endfor %}
+{% endcall %}
+
+</body>
+<style>
+    button {
+        width: 25%;
+        padding: 10px;
+        border: 1px solid #444;
+        border-radius: 3px;
+        background-color: #333;
+        color: #eee;
+        cursor: pointer;
+    }
+
+
+</style>
+</html>

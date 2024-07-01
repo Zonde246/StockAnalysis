@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href={{ url_for("static",filename="/styles/form.css" ) }}>
+
+    {% import "miscMacros/flashMacro.html" as f %}
+    {% import "appLayout.html" as layout %}
+</head>
+<body>
+{% call layout.appLayout() %}
+    <form action="{{ url_for('handle_auth') }}" method="post">
+        <div class="inputContainer">
+            <label for="user">
+                email
+            </label>
+            <input type="email" id="user" name="user" required>
+        </div>
+        <div class="inputContainer">
+            <label for="pass">
+                Password
+            </label>
+            <input type="password" id="pass" name="pass" required>
+        </div>
+        <div class="inputContainer">
+            <button type="submit" name="type" value="in">
+                Sign in
+            </button>
+        </div>
+        <div class="inputContainer">
+            <button type="submit" name="type" value="up">
+                Sign up
+            </button>
+        </div>
+        <div class="inputContainer">
+            {{ f.flashy() }}
+        </div>
+    </form>
+{% endcall %}
+</body>
+</html>
