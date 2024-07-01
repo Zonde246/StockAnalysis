@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    {#    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>#}
+
+
+    <title>Landing page</title>
+
+    {#    <script src="https://cdn.tailwindcss.com"></script>#}
+</head>
+
+{% import "appLayout.html" as layout %}
+
+{% call layout.appLayout() %}
+    <h1 id="title">
+        {{ data['title'] }}
+    </h1>
+    {% for i in data['data'] %}
+        <div>
+            <h2>{{ i["corpID"] }}</h2>
+            {% if  i["link"]["graphLink"] == None %}
+                <p> No graph available </p>
+                <p> Current Votes {{ i["votes"]["votes"] }} </p>
+            {% else %}
+                <a href="{{ i["link"]["graphLink"] }}" target="_blank">
+                    <img src="{{ i["link"]["graphLink"] }}" alt="" width="200" height="200"> <br/>
+                </a>
+            {% endif %}
+
+        </div>
+    {% endfor %}
+{% endcall %}
+</html>

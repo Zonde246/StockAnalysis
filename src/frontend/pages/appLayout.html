@@ -1,0 +1,17 @@
+
+
+
+{% import 'Components/navbar.html' as navBar %}
+{% import 'Components/footer.html' as footer %}
+{% import 'Components/head.html' as head %}
+
+{% macro appLayout() %}
+    {{ head.head() }}
+    <section class="layout">
+        {{ navBar.navBar() }}
+        <main>
+            {{ caller() }}
+        </main>
+        {{ footer.footer() }}
+    </section>
+{% endmacro %}

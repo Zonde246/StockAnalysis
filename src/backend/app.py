@@ -6,7 +6,10 @@ from supabase.client import Client, ClientOptions
 
 from helpers import select_sorter
 
-app = Flask(__name__)
+template_dir = os.path.abspath('../frontend/pages')
+static_dir = os.path.abspath('../frontend/static')
+
+app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 
 # Useful for debugging
 # app.config['SESSION_REFRESH_EACH_REQUEST'] = False
